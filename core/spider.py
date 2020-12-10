@@ -79,7 +79,7 @@ class ArticleReader:
         result = []
         elements = self._element_tree.xpath("//a[@class='ticket-symbol']")
         for element in elements:
-            if element.text not in result:
+            if element.text and element.text not in result:
                 result.append(element.text)
         # matches = re.findall(r"\(([A-Z]{2,7})\)", self.body)
         # for match in matches:
